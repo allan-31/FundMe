@@ -22,9 +22,6 @@ contract InteractionsTest is Test {
     function testUserCanFund() public {
         vm.prank(USER);
         fundMe.fund{value: SEND_VALUE}();
-        //FundFundMe fundFundMe = new FundFundMe();
-        //vm.deal(address(fundFundMe), 1 ether); // 💰 Give it some ether
-        //fundFundMe.fundFundMe(address(fundMe));
 
         address funder = fundMe.getFunder(0);
         assertEq(funder, USER);
